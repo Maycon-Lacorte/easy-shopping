@@ -1,0 +1,104 @@
+* { /* Estilos globais, se repete em tudo. Obs. Você sempre poderá utilizar e depois estilizar com uma excessão no próprio elemento. Ex. na cor do button e do background do container-right nesse projeto por exemplo.*/
+    margin: 0; /* zerar a margem */
+    padding: 0; /* zerar o padding */
+    box-sizing: border-box; /* Você pode definir o box-sizing como border-box para garantir que o padding e o border não afetem o tamanho total (final) do elemento.*/
+    font-family: "Oswald", sans-serif;
+    font-weight: 400; /* No projeto do Figma estudado, todas as fontes tem a mesma espessura. */
+    color: #5D5D7D; /* Essa cor é a mesma para todos, onde não for será subescrita diretamente no elemento, como o background e o button. */
+
+}
+
+.wrapper { /* chama a classe wrapper que é a div principal que embrulha todo o conteudo */ 
+    height: 100vh; /* 100 viewport height - 100% da altura da viewport */
+    width: 100vw; /* 100 viewport width - 100% da largura da viewport */
+} /* Diz ao naveador que a altura  e largura da div wrapper ocupará 100% da altura e da largura da tela. */
+
+.container-left {
+    display: inline-block; /* faz com que os elementos sejam exibidos lado a lado */
+    width: 60%;/* Essa classe define a largura da div container-left para 60% da largura da tela. */
+    padding-left: 136px; /* Para chegar toda classe container-left para direita e não ter que colocar margin em cada elemento dessa classe você utiliza um padding-left de 136px (valor pego com auxilio do ALT no Figma. (padding (Espaço interno entre o conteúdo do elemento e a sua borda.)) */
+    margin-top: 20%; /* O conteúdo da div container-left vai 25% para baixo. Para ficar como o projeto do Figma.*/
+}
+
+.container-right {
+    display: inline-block;  /* faz com que os elementos sejam exibidos lado a lado */
+    /*background: #5D5D7D; /* Informação pega no Figma. Essa cor fica muito escura porém o Figma indica que foi utilizado tabém uma opacidade. */
+    /*opacity: 0.16; /* Aplicado a opacity agora toda a classe container-right terá essa opacidade. Não pode, preciso que só o backgroud seja utilizado a opacity. Professor pesquisou no google e conseguiu essa informação no site stackoverflow: é possível utilzar o RGBA no background onde o A é a opacidade como pode ser visto abaixo: Obs.: Será utilizado o background-color: rgba(10,23,55,0.5); em substituição ao background e o opacity que anulei colocando como comentário*/
+    background-color: rgba(93,93,125,0.16); /* a cor no Figma está em hexacimal e foi convertido para RGB pesquisando no goolge. */
+    /* o backgroud foi aplicado corretamente porém ficou limitado á classe container-right. Preciso que fique até embiaxo conforme a o projeto do Figma.*/
+    height: 100vh; /* foi aplicado (100 viewport height = 100% da altura da viewport) para o backgroud ficar como o projeto do Figma.*/
+    width: 40%; /* Agora bagunçou tudo sobrepôs as duas divs se sobrepuseram parcialmente. É preciso posicionar as duas divs.*/
+    position: absolute; /* O elemento flutua e gruda na tela, mexendo junto com a mesma. Deixando as duas divs lado a lado novamente. Lembrando que seu espaço fica vazio quando fazemos isso. */
+
+}
+
+img {
+    position: relative; /* Posicionar a imagem relativa a sua posição atual, a que é mostrada na tela antes de utilizar o position, ou seja, ela pega a img do jeito que está e faz o que se pede. */
+    top: 25%; /* Posicionar a imagem 25% para baixo da imagem atual. Para ficar como o projeto do Figma. */
+    right: 130px; /* Posicionar afasta a imagem 130px da direita para a esquerda tendo a opição dela atual como referência. Para ficar como o projeto do Figma. */
+}
+
+h1 { /* Estilizar o h1. */
+    font-size: 70px; /* Tamanho da fonte. Valor coletado do projeto no Figma. */
+    line-height: 80px; /* Espacamento entre linhas. Valor coletado do projeto no Figma. */
+    width: 368px; /* Largura do h1. Valor coletado do projeto no Figma. */
+}
+
+p { /* Estilizar o p. */
+    font-size: 28px;
+    line-height: 48px;
+    opacity: 0.6;
+    margin: 15px 0; /* Atalho para o margin top e bottom sendo 15px para cima e para baixo e 0 para esquerda e para direita. Valores pego medindo com o ALT no Figma. */
+    width: 540px; /* Largura do p. Valor coletado do projeto no Figma. */
+    /* Todos os valores de p coletadas do projeto no Figma. */
+}
+
+button { /* Estilizar o botão. */
+    width: 269px;
+    height: 62px;
+    background: #9499EA;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    font-size: 24px;
+    line-height: 36px;
+    text-align:center;
+    color: #FFFFFF;
+    border: none; /* Necessário zerar para poder tirar a bordinha que aparece no botão como padrão. */
+    border-radius: 30px; /* Arredondar as bordas */
+    cursor: pointer; /* Mudar o cursor para mãozinha quando passamos o mouse por cima. */
+    /* Obs.: Todos os valores de p sem comentários foram coletadas do projeto no Figma. */
+}
+
+button:hover { /* Pseudo-classe hover, para quando passarmos o mouse por cima do botão. */
+    opacity: 0.8; /* Transparência do botão quando passamos o mouse por cima. */
+} /* Obs. Pseudo-classe só para treinar, não é necessário para o projeto. */
+
+button:active { /* Pseudo-classe active, para quando clicarmos no botão. */
+    opacity: 0.5; /* Transparência do botão quando clicamos no botão. */
+} /* Obs. Pseudo-classe só para treinar, não é necessário para o projeto. */
+
+a { /* Estilizar os links. */
+    font-size: 28px; /* Tamanho da fonte. Valor coletado do projeto no Figma. */
+    line-height: 41px; /* Espacamento entre linhas. Valor coletado do projeto no Figma. */
+    margin-right: 41px; /* Distância entre os links. Valor coletado do projeto no Figma. */
+    cursor: pointer; /* Mudar o cursor para mãozinha quando passamos o mouse por cima. */
+}
+
+a:nth-child(2) { /* Nesses vários links (a) a pseudo-classe nth-child(2) seleciona o segundo link. */
+    opacity: 0.4; /* aplicado a opacidade ao segundo link devido a pseudo-classe nth-child(2) inserida acima. Valor coletado do projeto no Figma. */
+}
+
+a:hover {
+    opacity: 0.4;
+} /* Obs. Pseudo-classe só para treinar, não é necessário para o projeto. */
+
+a:active {
+    opacity: 0.8;
+} /* Obs. Pseudo-classe só para treinar, não é necessário para o projeto. */
+
+header { /* Estilizar o header. */
+    margin: 24px 0 0 57px; /* Valores obtidos com auxilio do ALT no Figma. */
+}
+
+
+
+
